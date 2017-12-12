@@ -1,0 +1,78 @@
+<button class="btn btn-primary" (click)="toLogin()"> Back </button>
+<form #employeeForm="ngForm" (ngSubmit)="onSubmit()" [hidden]="submitted">
+    <section class="form-block">
+        <label>Add User Information</label>
+        <div class="form-group">
+            <label for="empFirstName">First name</label>
+            <label for="empFirstName"
+                aria-haspopup="true"
+                role="tooltip"
+                class="tooltip tooltip-validation tooltip-md"
+                [class.invalid]="firstNameInput.invalid && (firstNameInput.dirty || firstNameInput.touched)">
+                <input type="text" id="empFirstName" placeholder="Enter first name"
+                    required
+                    name="firstName"
+                    [(ngModel)]="user.firstName"
+                    #firstNameInput="ngModel">
+                <span class="tooltip-content">
+                    First Name is Required.
+                </span>
+            </label>
+        </div>
+        <div class="form-group">
+            <label for="empLastName">Last name</label>
+            <label for="empLastName"
+                aria-haspopup="true"
+                role="tooltip"
+                class="tooltip tooltip-validation tooltip-md"
+                [class.invalid]="lastNameInput.invalid && (lastNameInput.dirty || lastNameInput.touched)">
+                <input type="text" id="empLastName" placeholder="Enter last name"
+                    required
+                    name="lastName"
+                    [(ngModel)]="user.lastName"
+                    #lastNameInput="ngModel">
+                <span class="tooltip-content">
+                    Last Name is Required.
+                </span>
+            </label>
+        </div>
+        <div class="form-group">
+            <label for="empEmail">Email</label>
+            <label for="empEmail"
+                aria-haspopup="true"
+                role="tooltip"
+                class="tooltip tooltip-validation tooltip-md"
+                [class.invalid]="emailInput.invalid && (emailInput.dirty || emailInput.touched)">
+                <input type="text" id="empEmail" placeholder="Enter Email"
+                    required
+                    name="email"
+                    [(ngModel)]="user.email"
+                    #emailInput="ngModel">
+                <span class="tooltip-content">
+                    Email is Required.
+                </span>
+            </label>
+        </div>
+         <div class="form-group">
+            <label for="empPassword">Password</label>
+            <label for="empPassword"
+                aria-haspopup="true"
+                role="tooltip"
+                class="tooltip tooltip-validation tooltip-md"
+                [class.invalid]="passwordInput.invalid && (passwordInput.dirty || passwordInput.touched)">
+                <input type="password" id="empEmail" placeholder="Enter Password"
+                    required
+                    name="password"
+                    [(ngModel)]="user.password"
+                    #passwordInput="ngModel">
+                <span class="tooltip-content">
+                    Password is Required.
+                </span>
+            </label>
+        </div>
+      
+        <button class="btn btn-primary" type="submit"
+            [disabled]="employeeForm.form.invalid">Register</button>
+    </section>
+</form>
+

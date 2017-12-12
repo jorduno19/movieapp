@@ -4,7 +4,7 @@
   "description": "Angular-CLI starter for a Clarity project",
   "angular-cli": {},
   "scripts": {
-    "start": "ng serve",
+    "start": "ng serve --host 0.0.0.0 --port 8081 --public-host james-winter-2017-phortonssf.c9users.io",
     "lint": "tslint \"src/**/*.ts\"",
     "test": "ng test --single-run",
     "pree2e": "webdriver-manager update",
@@ -33,7 +33,7 @@
     "zone.js": "^0.8.16"
   },
   "devDependencies": {
-    "@angular/cli": "^1.2.1",
+    "@angular/cli": "^1.6.0",
     "@angular/compiler-cli": "^4.3.0",
     "@types/core-js": "~0.9.42",
     "@types/jasmine": "^2.5.53",

@@ -1,0 +1,34 @@
+<div class="row">
+    <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
+        <div *ngIf="movieDB$.movieData">
+            <ul class="list-unstyled">
+                <li *ngFor="let movie of movieDB$.movieData.results">
+                    <div class="card">
+                        <div class="card-block">
+                            <div class="card-media-block">
+                                <img src="http://image.tmdb.org/t/p/w185//{{movie.poster_path}}" class="card-media-image">
+                                <div class="card-media-description">
+                                    <span class="card-media-title">
+                                        {{ movie.title }}
+                                    </span>
+                                    <span class="card-media-text">
+                                        {{ movie.release_date }}
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="card-text">
+                                {{ movie.overview }}
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-sm btn-link" (click)="addFavorite(movie)">Favorite</button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-lg-2 offset-lg-2 col-md-12 col-sm-12 col-xs-12">
+        <app-fav-list></app-fav-list>
+    </div>
+</div>
