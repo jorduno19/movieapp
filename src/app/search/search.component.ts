@@ -23,7 +23,7 @@ export class SearchComponent implements OnInit {
         title: "",
         userId: ""
       };
-      favMovie.userId = localStorage.getItem('userId');
+      favMovie.userId = sessionStorage.getItem('userId');
       favMovie.id = movie.id;
       favMovie.title = movie.title;
       console.log(favMovie)

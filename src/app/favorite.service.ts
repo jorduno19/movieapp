@@ -6,7 +6,7 @@ import { Observable } from 'rxjs/Observable';
 export class FavoriteService {
     
     favorite: any;
-    
+    // userId = localStorage.getItem('userId');
     
   constructor(public http: HttpClient) { }
   
@@ -19,7 +19,7 @@ export class FavoriteService {
     }
     
     addFavorite(favMovie) {
-      this.http.post("http://james-winter-2017-phortonssf.c9users.io:8080/api/favorites", favMovie)
+      this.http.post("http://james-winter-2017-phortonssf.c9users.io:8080/api/appUsers/"+ favMovie.userId +"/favorites", favMovie)
       .subscribe();
     }
   
