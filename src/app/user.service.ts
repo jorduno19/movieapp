@@ -37,6 +37,7 @@ export class UserService {
     //Save data from our succesfull login in sessionStorage
     window.sessionStorage.setItem( "token", resData.token)
     window.sessionStorage.setItem( "userId", resData.userId)
+    
     this.router.navigate([this.returnUrl])   
   }
 }

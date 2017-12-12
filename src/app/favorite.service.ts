@@ -6,13 +6,13 @@ import { Observable } from 'rxjs/Observable';
 export class FavoriteService {
     
     favorite: any;
-    // userId = localStorage.getItem('userId');
+    userId = sessionStorage.getItem('userId');
     
   constructor(public http: HttpClient) { }
   
     getFavorite() {
       console.log();
-      this.http.get("http://james-winter-2017-phortonssf.c9users.io:8080/api/favorites")
+      this.http.get("http://james-winter-2017-phortonssf.c9users.io:8080/api/appUsers/"+ this.userId +"/favorites")
       .subscribe (data => {this.favorite = data; 
       console.log("service", this.favorite)}
       )
