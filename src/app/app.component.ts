@@ -40,20 +40,4 @@ export class AppComponent {
       this.top$.getPopular()
     }
    
-   
-    addFavorite(movie) {
-      let favMovie = {
-        id: "",
-        title: ""
-      };
-      favMovie.id = movie.id;
-      favMovie.title = movie.title;
-      console.log(favMovie)
-      this.fav$.addFavorite(favMovie)
-    }
-//   addFavorite(favorite: string): void{
-//       this.favorites.push( favorite )
-//       console.log("movie added to favorites")
-//       console.log(this.favorites)
-//   } 
 }

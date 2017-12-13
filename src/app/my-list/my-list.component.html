@@ -11,7 +11,8 @@
         <clr-dg-cell>{{favorite.score}}</clr-dg-cell>
         <clr-dg-cell>{{favorite.status}}</clr-dg-cell>
         <clr-dg-cell>
-            <button class="btn btn-info btn-sm">Edit</button>
+            <button class="btn btn-info btn-sm" (click) = "editFavorite(favorite)" routerLink="/favEdit">Edit</button>
+            <button class="btn btn-danger-outline btn-sm" (click) = "favDelete(favorite)">Delete</button>
         </clr-dg-cell>
     </clr-dg-row>
 </clr-datagrid>

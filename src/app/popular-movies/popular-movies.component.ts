@@ -13,9 +13,27 @@ import { Observable } from 'rxjs/Observable';
 })
 export class PopularMoviesComponent implements OnInit {
 
-  constructor(private top$: TopService) { }
+  constructor(private top$: TopService, private fav$: FavoriteService) { }
 
   ngOnInit() {
   }
-
+  
+  addFavorite(popular) {
+      let favMovie = {
+        id: "",
+        title: "",
+        poster_path: "",
+        release_date: "",
+        overview: "",
+        userId: ""
+      };
+      favMovie.userId = sessionStorage.getItem('userId');
+      favMovie.id = popular.id;
+      favMovie.title = popular.title;
+      favMovie.poster_path = popular.poster_path;
+      favMovie.release_date = popular.release_date;
+      favMovie.overview = popular.overview;
+      console.log(favMovie)
+      this.fav$.addFavorite(favMovie)
+    }
 }

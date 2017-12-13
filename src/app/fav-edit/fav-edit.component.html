@@ -3,7 +3,9 @@
         <h2>Picture Here</h2>
     </div>
     <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-        <h2>Movie Title</h2>
+        <h2>
+            {{fav$.favorite.title}}
+        </h2>
         
         <form>
             <section class="form-block">
@@ -40,6 +42,7 @@
         
         <div>
             <h2>Description</h2>
+            {{ fav$.favorite.overview }}
         </div>
     </div>
 </div>

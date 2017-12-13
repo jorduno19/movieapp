@@ -20,11 +20,23 @@ export class FavListComponent implements OnInit {
   ngOnInit() {
     this.fav$.getFavorite()
   }
-  
-  addFavorite(favorite: string): void{
-       this.favorites.push( favorite )
-       console.log("movie added to favorites")
-       console.log(this.favorites)
-   } 
 
 }
+// getFavorite() {
+//     let userData = {
+//       // email: "",
+//       // favorite: "",
+//       // firstName: "",
+//       id: "",
+//       // lastName: ""
+//     };
+//     userData.id = sessionStorage.getItem('userId');
+//     this.fav$.getFavorite(userData)
+//   }
+// }
+
+// email: "jorduno19@gmail.com"
+// favorites: [{…}]
+// firstName: "James"
+// id: "5a2f5d80a5d6ab3a7b0e6a0d"
+// lastName: "Orduno"
