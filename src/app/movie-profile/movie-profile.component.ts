@@ -1,4 +1,4 @@
-import { Component,  OnInit } from "@angular/core";
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MovieDbService } from "../movie-db.service";
 import { TopService } from "../top.service";
@@ -7,9 +7,15 @@ import { FavoriteService } from "../favorite.service";
 import { Observable } from 'rxjs/Observable';
 
 @Component({
-    styleUrls: ['./home.component.scss'],
-    templateUrl: './home.component.html',
+  selector: 'app-movie-profile',
+  templateUrl: './movie-profile.component.html',
+  styleUrls: ['./movie-profile.component.scss']
 })
-export class HomeComponent {
+export class MovieProfileComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit() {
+  }
 
 }

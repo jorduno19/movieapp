@@ -23,6 +23,12 @@ import { TopService } from "./top.service";
 import { FavoriteService } from "./favorite.service";
 import { MovieService } from "./movie.service";
 import { UserService } from "./user.service";
+import { UpcomingService } from "./upcoming.service";
+import { ProfileComponent } from './profile/profile.component';
+import { MovieProfileComponent } from './movie-profile/movie-profile.component';
+import { UpcomingComponent } from './upcoming/upcoming.component';
+import { MyListCardComponent } from './my-list-card/my-list-card.component';
+import { MoviePageComponent } from './movie-page/movie-page.component';
 
 
 
@@ -37,7 +43,12 @@ import { UserService } from "./user.service";
         FavListComponent,
         FavEditComponent,
         LoginComponent,
-        RegisterComponent
+        RegisterComponent,
+        ProfileComponent,
+        MovieProfileComponent,
+        UpcomingComponent,
+        MyListCardComponent,
+        MoviePageComponent
     ],
     imports: [
         BrowserAnimationsModule,
@@ -47,7 +58,7 @@ import { UserService } from "./user.service";
         ClarityModule,
         ROUTING
     ],
-    providers: [MovieDbService, TopService, FavoriteService, MovieService, UserService],
+    providers: [MovieDbService, TopService, FavoriteService, MovieService, UserService, UpcomingService],
     bootstrap: [AppComponent]
 })
 export class AppModule {

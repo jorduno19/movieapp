@@ -1,0 +1,17 @@
+<div class="card" >
+    <div class="card-header">
+        Favorites
+    </div>
+    <div class="card-block">
+        <ul class="list-unstyled">
+            <li *ngFor="let favorite of fav$.favorite; let i=index">
+                <div *ngIf="i<5">
+                    {{ favorite.title }}
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="card-footer">
+        <a class="btn btn-sm btn-link" [routerLink]="['/mylist']" routerLinkActive="active">My List</a>
+    </div>
+</div>

@@ -18,7 +18,7 @@ export class FavListComponent implements OnInit {
   constructor(private fav$: FavoriteService) { }
 
   ngOnInit() {
-    this.fav$.getFavorite()
+    // this.fav$.getFavorite()
   }
 
 }

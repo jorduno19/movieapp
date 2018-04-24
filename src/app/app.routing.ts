@@ -14,6 +14,7 @@ import { PopularMoviesComponent } from './popular-movies/popular-movies.componen
 import { FavEditComponent } from './fav-edit/fav-edit.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { MovieProfileComponent } from './movie-profile/movie-profile.component';
 
 
 
@@ -26,7 +27,9 @@ export const ROUTES: Routes = [
     {path: 'popularmovie', component: PopularMoviesComponent},
     {path: 'favEdit', component: FavEditComponent},
     {path: 'login', component: LoginComponent},
-    {path: 'register', component: RegisterComponent}
+    {path: 'register', component: RegisterComponent},
+    {path: 'movie-profile', component: MovieProfileComponent}
+    
     
     
 

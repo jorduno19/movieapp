@@ -16,6 +16,7 @@ export class PopularMoviesComponent implements OnInit {
   constructor(private top$: TopService, private fav$: FavoriteService) { }
 
   ngOnInit() {
+    this.top$.getPopular()
   }
   
   addFavorite(popular) {
@@ -25,6 +26,8 @@ export class PopularMoviesComponent implements OnInit {
         poster_path: "",
         release_date: "",
         overview: "",
+        score: "",
+        progress: "",
         userId: ""
       };
       favMovie.userId = sessionStorage.getItem('userId');

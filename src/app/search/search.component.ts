@@ -24,6 +24,8 @@ export class SearchComponent implements OnInit {
         poster_path: "",
         release_date: "",
         overview: "",
+        score: "",
+        progress: "",
         userId: ""
       };
       favMovie.userId = sessionStorage.getItem('userId');

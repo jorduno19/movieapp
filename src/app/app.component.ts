@@ -4,7 +4,9 @@ import { MovieDbService } from "./movie-db.service";
 import { TopService } from "./top.service";
 import { FavoriteService } from "./favorite.service";
 import { UserService } from "./user.service";
+import { UpcomingService } from "./upcoming.service";
 import { Observable } from 'rxjs/Observable';
+
 @Component({
     selector: 'my-app',
     templateUrl: './app.component.html',
@@ -24,7 +26,8 @@ export class AppComponent {
         private movieDB$: MovieDbService, 
         private top$: TopService, 
         private fav$: FavoriteService, 
-        private user$: UserService
+        private user$: UserService,
+        private upcoming$: UpcomingService
         ) {}
     
     search() {
@@ -33,7 +36,7 @@ export class AppComponent {
    
    
     ngOnInit() {
-      this.top$.getPopular()
+      // this.top$.getPopular()
     }
   
     popularMovies() {

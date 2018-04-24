@@ -5,7 +5,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 @Injectable()
 export class UserService {
   baseUrl: string = "http://james-winter-2017-phortonssf.c9users.io:8080/api/appUsers";
-  returnUrl: string = "popularmovie";
+  returnUrl: string = "home";
   loginPage: string = "";
   userData: any;
   constructor( 
@@ -21,7 +21,8 @@ export class UserService {
     this.http.post(`${this.baseUrl}`, userData)
       .subscribe( resData => {
         this.toHomePage(resData)
-      })
+      },
+      )
   }
 
   loginUser(userData){
@@ -37,6 +38,7 @@ export class UserService {
     //Save data from our succesfull login in sessionStorage
     window.sessionStorage.setItem( "token", resData.token)
     window.sessionStorage.setItem( "userId", resData.userId)
+    console.log(sessionStorage.getItem('userId'))
     
     this.router.navigate([this.returnUrl])   
   }

@@ -1,17 +1,33 @@
+<!--Display if user is signed in-->
+<!--Not displaying on intial log in, need to have list not load til data comes in-->
 <div class="card" >
     <div class="card-header">
         Favorites
     </div>
     <div class="card-block">
         <ul class="list-unstyled">
-            <li *ngFor="let favorite of fav$.favorite">
-              {{ favorite.title }}
+            <li *ngFor="let favorite of fav$.favorite; let i=index">
+                <div *ngIf="i<5">
+                    {{ favorite.title }}
+                </div>
             </li>
         </ul>
     </div>
     <div class="card-footer">
-        <a class="btn btn-sm btn-link" [routerLink]="['/mylist']" routerLinkActive="active">Your List</a>
+        <a class="btn btn-sm btn-link" [routerLink]="['/mylist']" routerLinkActive="active">My List</a>
     </div>
 </div>
 
+<!--Display this if user is not signed in-->
+<div class="card" >
+    <div class="card-header">
+        Favorites
+    </div>
+    <div class="card-block">
+        <h2>Register to save your favorites</h2>
+    </div>
+    <div class="card-footer">
+        <a class="btn btn-sm btn-link" [routerLink]="['/mylist']" routerLinkActive="active">My List</a>
+    </div>
+</div>
 <!--*ngIf="fav$.favorite"-->

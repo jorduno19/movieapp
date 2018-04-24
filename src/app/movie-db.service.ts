@@ -14,6 +14,12 @@ export class MovieDbService {
     page: string = "&page=1";
     adultInclude: string = "&include_adult=false";
     
+    // https://api.themoviedb.org/3/movie/268?api_key=dbdc8bf28d385f5fe11df7fc8b948e5b&language=en-US
+    // Get movie by Id
+    urlById: string = "https://api.themoviedb.org/3/movie/";
+    movieId: string =  "";
+    singleThing: string = "?";
+    
     base_url: string = "https://image.tmdb.org/t/p/w500";
     
     movieData: any;
@@ -26,6 +32,10 @@ export class MovieDbService {
             console.log("service", this.movieData.results)}
         )
   }
+  
+//   getMovieDataById() {
+//       this.http.get(this.urlById + this.api + this.language)
+//   }
 }
 
 

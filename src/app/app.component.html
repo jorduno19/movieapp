@@ -5,14 +5,15 @@
         <span class="title">MyMovieList</span>
       </a>
     </div>
+    <div class="header-nav" [clr-nav-level]="1">
+      <a class="nav-link" href="#" [routerLink]="['/home']" routerLinkActive="active"><span class="nav-text">Home</span></a>
+      <a class="nav-link" href="#" [routerLink]="['/movie-profile']" routerLinkActive="active"><span class="nav-text">Movie Profile</span></a>
+    </div>
     <form class="search" >
         <label for="search_input" >
             <input id="search_input" type="text" placeholder="Search for movies" [(ngModel)]="movieDB$.movie" [ngModelOptions]="{standalone: true}" (keyup.enter)="search()"  routerLink="/search">
         </label>
     </form>
-    <div class="header-nav" [clr-nav-level]="1">
-      <a class="nav-link" href="#" [routerLink]="['/favEdit']" routerLinkActive="active"><span class="nav-text">favEdit</span></a>
-    </div>
     <div class="header-actions">
       <clr-dropdown>
             <button class="nav-icon" clrDropdownTrigger>
@@ -20,14 +21,24 @@
                 <clr-icon shape="caret down"></clr-icon>
             </button>
             <clr-dropdown-menu *clrIfOpen clrPosition="bottom-right">
-                <a href="..." clrDropdownItem>My List</a>
+                <a href="#" [routerLink]="['/mylist']" routerLinkActive="active" clrDropdownItem>Profile</a>
+                <a href="#" [routerLink]="['/mylist']" routerLinkActive="active" clrDropdownItem>My List</a>
+                <a href="#" [routerLink]="['/mylist']" routerLinkActive="active" clrDropdownItem>Account Settings</a>
+                <a href="#" [routerLink]="['/mylist']" routerLinkActive="active" clrDropdownItem>Logout</a>
             </clr-dropdown-menu>
         </clr-dropdown>
     </div>
   </clr-header>
   <div class="content-container">
     <div class ="content-area">
-      <router-outlet></router-outlet>
+      <!-- If logged in show mylist -->
+      <div>
+        <router-outlet></router-outlet>
+      </div>
+      <!-- If not logged in show register to add  -->
+      <div>
+        
+      </div>
     </div>
   </div>
 </clr-main-container>
